@@ -3,463 +3,369 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>阿らた屋 | つけそば専門店 - 大阪北区</title>
-  <meta name="description" content="大阪市北区のつけそば専門店「阿らた屋」。歴史ある秘伝のかえしをブレンドした出汁と、のど越しの良い自家製麺。日本酒と蕎麦の至福のひとときを。">
+  <title>つけ蕎麦 あらた屋 | 大阪・新町</title>
+  <meta name="description" content="大阪市西区新町のつけ蕎麦専門店「あらた屋」。秘伝の出汁と毎朝手打ちの自家製麺。蕎麦文化の新しいかたちへ。">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            dark: { 900: '#0a0a0a', 800: '#111111', 700: '#1a1a1a', 600: '#2a2a2a' },
-            accent: { DEFAULT: '#c8a96e', light: '#d4bc8a' }
-          }
-        }
-      }
-    }
-  </script>
 </head>
 <body>
 
   <!-- ============ Navigation ============ -->
-  <nav class="nav-glass fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 lg:h-20">
-        <!-- Logo -->
-        <a href="#" class="font-serif text-white text-lg tracking-[0.15em]" style="font-family: 'Zen Old Mincho', serif;">
-          阿らた屋
-        </a>
-        <!-- Desktop Nav -->
-        <div class="hidden md:flex items-center gap-8">
-          <a href="#about" class="nav-link">About</a>
-          <a href="#menu" class="nav-link">Menu</a>
-          <a href="#gallery" class="nav-link">Gallery</a>
-          <a href="#info" class="nav-link">Info</a>
-        </div>
-        <!-- Hamburger -->
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+  <nav class="nav-glass" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">あらた屋</a>
+      <div class="nav-links">
+        <a href="#story"   class="nav-link">Story</a>
+        <a href="#chef"    class="nav-link">Chef</a>
+        <a href="#menu"    class="nav-link">Menu</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#access"  class="nav-link">Access</a>
       </div>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#about" onclick="toggleMenu()">About</a>
-    <a href="#menu" onclick="toggleMenu()">Menu</a>
+    <a href="#story"   onclick="toggleMenu()">Story</a>
+    <a href="#chef"    onclick="toggleMenu()">Chef</a>
+    <a href="#menu"    onclick="toggleMenu()">Menu</a>
     <a href="#gallery" onclick="toggleMenu()">Gallery</a>
-    <a href="#info" onclick="toggleMenu()">Info</a>
+    <a href="#access"  onclick="toggleMenu()">Access</a>
   </div>
 
-  <!-- ============ Hero Section ============ -->
-  <section class="hero-section">
+  <!-- ============ Hero ============ -->
+  <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-sub fade-up">つけそば専門店</p>
-      <h1 class="hero-logo-text fade-up stagger-1">阿らた屋</h1>
-      <p class="hero-tagline fade-up stagger-2">
-        一杯の蕎麦に、職人の魂を。<br>
-        秘伝の出汁と自家製麺が織りなす、至高のつけそば。
+      <p class="hero-eyebrow reveal">OSAKA · SHINMACHI · EST. 2017</p>
+      <h1 class="hero-title reveal d1">あらた屋</h1>
+      <p class="hero-en reveal d2">TSUKESOBA SPECIALTY</p>
+      <div class="hero-rule reveal d3"></div>
+      <p class="hero-tagline reveal d4">
+        秘伝の出汁と手打ち自家製麺。<br>蕎麦文化の新しい地平へ。
       </p>
-      <div class="mt-10 fade-up stagger-3">
-        <a href="#about" class="inline-block border border-accent/40 text-accent text-xs tracking-[0.2em] uppercase px-8 py-3 hover:bg-accent/10 transition-all duration-300">
-          Explore
-        </a>
-      </div>
+      <a href="#story" class="hero-cta reveal d5">
+        <span>Discover</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
-    <div class="hero-scroll-indicator">
+    <div class="hero-scroll">
       <span>Scroll</span>
-      <div class="scroll-line"></div>
+      <div class="hero-scroll-line"></div>
     </div>
   </section>
 
-  <!-- ============ About Section ============ -->
-  <section id="about" class="about-section py-24 lg:py-36">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <!-- Image -->
-        <div class="fade-up">
-          <div class="about-image-wrapper aspect-[3/4]">
-            <img
-              src="https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=800&q=80"
-              alt="阿らた屋のつけそば"
-              class="w-full h-full object-cover"
-            >
-          </div>
-        </div>
-        <!-- Text -->
-        <div class="fade-up stagger-2">
-          <p class="section-label">About Us</p>
-          <h2 class="section-title">一本の蕎麦に<br>宿る、覚悟。</h2>
-          <div class="section-divider"></div>
-          <p class="about-text mt-6">
-            関西では珍しい"つけ蕎麦"の専門店として、私たちは一杯に全てを注ぎ込んでいます。
-            歴史ある秘伝のかえし「蕎麦屋とがくし」をブレンドした出汁は、
-            奥深い旨味と芳醇な香りが口の中に広がる、唯一無二の味わい。
-          </p>
-          <p class="about-text mt-4">
-            のど越しの良い自家製麺は、毎朝丁寧に打ち上げ、
-            その日の気温や湿度に合わせて最適な状態でご提供いたします。
-          </p>
-
-          <div class="mt-10 space-y-6">
-            <div class="about-feature fade-up stagger-3">
-              <h3 class="about-feature-title">秘伝の出汁</h3>
-              <p class="text-sm text-gray-500 leading-relaxed">
-                「蕎麦屋とがくし」の技法を受け継ぎ、長年熟成させた秘伝のかえしと、
-                厳選した鰹節・昆布から引いた一番出汁を合わせた至高のつゆ。
-              </p>
-            </div>
-            <div class="about-feature fade-up stagger-4">
-              <h3 class="about-feature-title">自家製麺</h3>
-              <p class="text-sm text-gray-500 leading-relaxed">
-                国産蕎麦粉を贅沢に使い、毎朝手打ちで仕上げる麺。
-                つけそばに最適なコシとのど越しを追求し続けています。
-              </p>
-            </div>
-            <div class="about-feature fade-up stagger-5">
-              <h3 class="about-feature-title">全国厳選の日本酒</h3>
-              <p class="text-sm text-gray-500 leading-relaxed">
-                全国から集めた稀少価値の高い日本酒を常時取り揃え。
-                蕎麦前の一杯から〆の蕎麦まで、至福のひとときを演出します。
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ Divider Quote ============ -->
-  <section class="py-20 lg:py-28 bg-dark-800 text-center">
-    <div class="max-w-4xl mx-auto px-6">
-      <p class="fade-up" style="font-family: 'Zen Old Mincho', serif; font-size: clamp(1.2rem, 3vw, 2rem); color: #fff; letter-spacing: 0.1em; line-height: 2;">
+  <!-- ============ Philosophy ============ -->
+  <section class="philosophy">
+    <div class="philosophy-inner reveal">
+      <span class="philosophy-deco">一杯</span>
+      <p class="philosophy-quote">
         日本酒片手に、様々な肴を愉しみ、<br>
         〆には蕎麦を手繰る。<br>
-        <span class="text-accent">それが、阿らた屋の流儀。</span>
+        <em>それが、あらた屋の流儀。</em>
       </p>
     </div>
   </section>
 
-  <!-- ============ Menu Section ============ -->
-  <section id="menu" class="menu-section py-24 lg:py-36">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <!-- Header -->
-      <div class="text-center mb-16 fade-up">
-        <p class="section-label">Menu</p>
-        <h2 class="section-title">品書き</h2>
-        <div class="section-divider-center"></div>
-        <p class="text-sm text-gray-500 mt-4 max-w-lg mx-auto">
-          こだわり抜いたつけそばのラインナップ。<br>
-          全ての蕎麦に、職人の想いが込められています。
+  <!-- ============ Story ============ -->
+  <section id="story" class="story">
+    <div class="story-grid">
+      <div class="story-image reveal-left">
+        <img
+          src="https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=1200&q=90"
+          alt="手打ち蕎麦"
+          loading="lazy"
+        >
+        <div class="story-image-frame"></div>
+      </div>
+      <div class="story-body reveal-right">
+        <p class="eyebrow">Our Story</p>
+        <h2 class="heading-xl">一本の蕎麦に<br>宿る、覚悟。</h2>
+        <div class="rule"></div>
+        <p class="body-text">
+          関西では珍しい"つけ蕎麦"の専門店として、あらた屋は2017年に大阪・新町に誕生しました。
+          職人・前川典央が追い続けてきた「蕎麦の新しいかたち」を体現する一杯。
         </p>
-      </div>
-
-      <!-- Menu Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Item 1 -->
-        <div class="menu-card fade-up stagger-1">
-          <div class="menu-card-image">
-            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80" alt="特製つけそば">
-            <div class="menu-card-overlay"></div>
-            <div class="menu-card-badge">人気No.1</div>
+        <p class="body-text mt">
+          秘伝のかえしと厳選した鰹節・昆布から丁寧に引いた一番出汁を合わせたつゆ。
+          毎朝手打ちする自家製麺は、その日の気温と湿度に合わせた最適な仕上がりでご提供します。
+        </p>
+        <div class="pillars">
+          <div class="pillar reveal d2">
+            <h3>秘伝の出汁</h3>
+            <p>熟成させたかえしと一番出汁が生み出す、唯一無二の深みある味わい。</p>
           </div>
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">特製つけそば</h3>
-            <p class="menu-card-desc">
-              秘伝のかえしと一番出汁を合わせた濃厚つけ汁。
-              チャーシュー、味玉、海苔を添えた看板メニュー。
-            </p>
-            <p class="menu-card-price">¥1,100<span>（税込）</span></p>
+          <div class="pillar reveal d3">
+            <h3>手打ち自家製麺</h3>
+            <p>国産蕎麦粉を贅沢に使い、コシとのど越しを毎朝丁寧に打ち込んだ麺。</p>
           </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="menu-card fade-up stagger-2">
-          <div class="menu-card-image">
-            <img src="https://images.unsplash.com/photo-1552611052-33e04de1b100?w=600&q=80" alt="鶏白湯つけそば">
-            <div class="menu-card-overlay"></div>
-          </div>
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">鶏白湯つけそば</h3>
-            <p class="menu-card-desc">
-              国産鶏を長時間炊き上げた白湯スープに、
-              秘伝のかえしを合わせたクリーミーな一杯。
-            </p>
-            <p class="menu-card-price">¥1,200<span>（税込）</span></p>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="menu-card fade-up stagger-3">
-          <div class="menu-card-image">
-            <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=600&q=80" alt="辛味つけそば">
-            <div class="menu-card-overlay"></div>
-          </div>
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">辛味つけそば</h3>
-            <p class="menu-card-desc">
-              自家調合の辛味だれが食欲をそそる一杯。
-              痺れる山椒と唐辛子の絶妙なハーモニー。
-            </p>
-            <p class="menu-card-price">¥1,100<span>（税込）</span></p>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="menu-card fade-up stagger-4">
-          <div class="menu-card-image">
-            <img src="https://images.unsplash.com/photo-1551326844-4df70f78d0e9?w=600&q=80" alt="もりそば">
-            <div class="menu-card-overlay"></div>
-          </div>
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">もりそば</h3>
-            <p class="menu-card-desc">
-              蕎麦本来の風味を味わう基本の一枚。
-              粗挽きの蕎麦粉が生み出す豊かな香り。
-            </p>
-            <p class="menu-card-price">¥850<span>（税込）</span></p>
-          </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="menu-card fade-up stagger-5">
-          <div class="menu-card-image">
-            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80" alt="おでん盛り合わせ">
-            <div class="menu-card-overlay"></div>
-            <div class="menu-card-badge">おすすめ</div>
-          </div>
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">おでん盛り合わせ</h3>
-            <p class="menu-card-desc">
-              出汁が染み込んだ絶品おでん。
-              日本酒との相性は言うまでもなく。
-            </p>
-            <p class="menu-card-price">¥800<span>（税込）</span></p>
-          </div>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="menu-card fade-up stagger-6">
-          <div class="menu-card-image">
-            <img src="https://images.unsplash.com/photo-1547489432-cf93fa6c71ee?w=600&q=80" alt="本日の酒肴">
-            <div class="menu-card-overlay"></div>
-          </div>
-          <div class="menu-card-body">
-            <h3 class="menu-card-name">本日の酒肴</h3>
-            <p class="menu-card-desc">
-              毎日変わる旬の肴。通い詰めても飽きない、
-              日替わりの愉しみをご提供します。
-            </p>
-            <p class="menu-card-price">¥600〜<span>（税込）</span></p>
+          <div class="pillar reveal d4">
+            <h3>厳選日本酒</h3>
+            <p>全国の稀少な銘柄を常時取り揃え。蕎麦前から〆まで、至福の時間を。</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ Gallery Section ============ -->
-  <section id="gallery" class="gallery-section py-24 lg:py-36">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <!-- Header -->
-      <div class="text-center mb-16 fade-up">
-        <p class="section-label">Gallery</p>
-        <h2 class="section-title">空間と情景</h2>
-        <div class="section-divider-center"></div>
-      </div>
+  <!-- ============ Chef ============ -->
+  <section id="chef" class="chef">
+    <div class="chef-bg"></div>
+    <div class="chef-overlay"></div>
+    <div class="chef-content reveal">
+      <p class="eyebrow light">Chef</p>
+      <h2 class="chef-name">前川 典央</h2>
+      <p class="chef-romanji">NORIO MAEKAWA</p>
+      <div class="rule"></div>
+      <p class="body-text muted">
+        1980年、奈良県生まれ。蕎麦の世界に入り長年の修行を経て辿り着いたのは、
+        「蕎麦文化の歴史への挑戦状」という一つの答え。
+        関西では珍しい"つけ蕎麦"という形式で、2017年5月に大阪・新町に
+        あらた屋をオープン。
+      </p>
+      <p class="body-text muted mt">
+        蕎麦屋の格式を大切にしながらも、新しい食体験を追い続ける——
+        それが前川の信念であり、あらた屋の哲学でもある。
+      </p>
+    </div>
+  </section>
 
-      <!-- Gallery Grid -->
-      <div class="gallery-grid fade-up stagger-2">
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1554502078-ef0fc409efce?w=1000&q=80" alt="店内カウンター">
-          <div class="gallery-item-overlay">
-            <span class="gallery-item-caption">カウンター席</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="料理">
-          <div class="gallery-item-overlay">
-            <span class="gallery-item-caption">旬の肴</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80" alt="店内雰囲気">
-          <div class="gallery-item-overlay">
-            <span class="gallery-item-caption">落ち着いた空間</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=600&q=80" alt="日本酒">
-          <div class="gallery-item-overlay">
-            <span class="gallery-item-caption">厳選日本酒</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=600&q=80" alt="蕎麦打ち">
-          <div class="gallery-item-overlay">
-            <span class="gallery-item-caption">手打ち蕎麦</span>
-          </div>
-        </div>
+  <!-- ============ Menu ============ -->
+  <section id="menu" class="menu">
+    <div class="section-header reveal">
+      <p class="eyebrow">Menu</p>
+      <h2 class="heading-xl">品書き</h2>
+      <div class="rule center"></div>
+      <p class="section-sub">職人の魂が宿るつけ蕎麦たち。</p>
+    </div>
+
+    <!-- 01 牛つけ蕎麦 -->
+    <div class="meal reveal">
+      <div class="meal-image">
+        <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1000&q=85" alt="牛つけ蕎麦" loading="lazy">
+        <span class="meal-badge">人気 No.1</span>
+      </div>
+      <div class="meal-text">
+        <span class="meal-num">01</span>
+        <h3 class="meal-name">牛つけ蕎麦</h3>
+        <p class="meal-desc">
+          秘伝のかつお出汁に、白ネギ・海苔・ごまの風味豊かなつゆ。
+          厳選した国産牛を合わせた、あらた屋の看板メニュー。
+        </p>
+        <p class="meal-price">¥1,200<span>（税込）</span></p>
+      </div>
+    </div>
+
+    <!-- 02 鶏つけ蕎麦 -->
+    <div class="meal meal--flip reveal">
+      <div class="meal-image">
+        <img src="https://images.unsplash.com/photo-1552611052-33e04de1b100?w=1000&q=85" alt="鶏つけ蕎麦" loading="lazy">
+      </div>
+      <div class="meal-text">
+        <span class="meal-num">02</span>
+        <h3 class="meal-name">鶏つけ蕎麦</h3>
+        <p class="meal-desc">
+          国産鶏を長時間炊き上げたコクあるつゆに、
+          秘伝のかえしを合わせたやさしい旨味の一杯。
+        </p>
+        <p class="meal-price">¥1,100<span>（税込）</span></p>
+      </div>
+    </div>
+
+    <!-- 03 豚つけ蕎麦 -->
+    <div class="meal reveal">
+      <div class="meal-image">
+        <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=1000&q=85" alt="豚つけ蕎麦" loading="lazy">
+      </div>
+      <div class="meal-text">
+        <span class="meal-num">03</span>
+        <h3 class="meal-name">豚つけ蕎麦</h3>
+        <p class="meal-desc">
+          豚骨と出汁を合わせた濃厚つゆが自家製麺に絡む。
+          辛味だれの選択も可能な、濃い旨味の逸品。
+        </p>
+        <p class="meal-price">¥1,100<span>（税込）</span></p>
+      </div>
+    </div>
+
+    <!-- 04 もりそば -->
+    <div class="meal meal--flip reveal">
+      <div class="meal-image">
+        <img src="https://images.unsplash.com/photo-1551326844-4df70f78d0e9?w=1000&q=85" alt="もりそば" loading="lazy">
+      </div>
+      <div class="meal-text">
+        <span class="meal-num">04</span>
+        <h3 class="meal-name">もりそば</h3>
+        <p class="meal-desc">
+          蕎麦本来の風味を堪能する基本の一枚。
+          粗挽きの蕎麦粉が生み出す豊かな香りと食感。
+        </p>
+        <p class="meal-price">¥850<span>（税込）</span></p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============ Gallery ============ -->
+  <section id="gallery" class="gallery">
+    <div class="section-header reveal">
+      <p class="eyebrow">Gallery</p>
+      <h2 class="heading-xl">空間と情景</h2>
+      <div class="rule center"></div>
+    </div>
+    <div class="gallery-grid reveal d2">
+      <div class="g large">
+        <img src="https://images.unsplash.com/photo-1554502078-ef0fc409efce?w=1400&q=85" alt="カウンター席" loading="lazy">
+        <div class="g-over"><span>カウンター席</span></div>
+      </div>
+      <div class="g">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&q=85" alt="旬の肴" loading="lazy">
+        <div class="g-over"><span>旬の肴</span></div>
+      </div>
+      <div class="g">
+        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=85" alt="店内" loading="lazy">
+        <div class="g-over"><span>落ち着いた空間</span></div>
+      </div>
+      <div class="g">
+        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=800&q=85" alt="日本酒" loading="lazy">
+        <div class="g-over"><span>厳選日本酒</span></div>
+      </div>
+      <div class="g">
+        <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=800&q=85" alt="蕎麦打ち" loading="lazy">
+        <div class="g-over"><span>手打ち蕎麦</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ Info / Access Section ============ -->
-  <section id="info" class="info-section py-24 lg:py-36">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <!-- Header -->
-      <div class="text-center mb-16 fade-up">
-        <p class="section-label">Information</p>
-        <h2 class="section-title">店舗情報</h2>
-        <div class="section-divider-center"></div>
+  <!-- ============ Access ============ -->
+  <section id="access" class="access">
+    <div class="access-wrap">
+      <div class="section-header reveal">
+        <p class="eyebrow">Information &amp; Access</p>
+        <h2 class="heading-xl">店舗情報</h2>
+        <div class="rule center"></div>
       </div>
-
-      <div class="grid lg:grid-cols-2 gap-8">
+      <div class="access-grid">
         <!-- Info Card -->
-        <div class="info-card fade-up">
-          <div class="space-y-8">
-            <div>
-              <p class="info-label">Store Name</p>
-              <p class="info-value" style="font-family: 'Zen Old Mincho', serif; font-size: 1.3rem;">つけそば専門店 阿らた屋</p>
+        <div class="info-card reveal">
+          <div class="info-row">
+            <p class="info-label">Store</p>
+            <p class="info-val store-name">つけ蕎麦 あらた屋</p>
+          </div>
+          <div class="info-row">
+            <p class="info-label">Address</p>
+            <p class="info-val">
+              〒550-0013<br>
+              大阪府大阪市西区新町1丁目8-6<br>
+              三愛ビル 103
+            </p>
+          </div>
+          <div class="info-row">
+            <p class="info-label">Hours</p>
+            <div class="info-val">
+              <p><span class="time-tag">Lunch</span>11:30 – 14:00（L.O.14:00）</p>
+              <p><span class="time-tag">Dinner</span>17:30 – 22:00（L.O.21:30）</p>
             </div>
-            <div>
-              <p class="info-label">Address</p>
-              <p class="info-value">
-                〒530-0028<br>
-                大阪府大阪市北区万歳町3-41<br>
-                城についてビル 1F
-              </p>
-            </div>
-            <div>
-              <p class="info-label">Hours</p>
-              <div class="info-value space-y-1">
-                <p><span class="text-accent text-xs mr-3">Lunch</span>11:30 - 14:00（L.O. 13:30）</p>
-                <p><span class="text-accent text-xs mr-3">Dinner</span>17:30 - 23:00（L.O. 22:30）</p>
-              </div>
-            </div>
-            <div>
-              <p class="info-label">Closed</p>
-              <p class="info-value">日曜日・祝日</p>
-            </div>
-            <div>
-              <p class="info-label">Access</p>
-              <p class="info-value">
-                大阪メトロ 堺筋線「扇町」駅 徒歩3分<br>
-                JR環状線「天満」駅 徒歩5分
-              </p>
-            </div>
-            <div>
-              <p class="info-label">TEL</p>
-              <p class="info-value">
-                <a href="tel:06-0000-0000" class="text-accent hover:text-accent-light transition-colors">06-XXXX-XXXX</a>
-              </p>
-            </div>
+          </div>
+          <div class="info-row">
+            <p class="info-label">Closed</p>
+            <p class="info-val">日曜日・祝日・年末年始・お盆</p>
+          </div>
+          <div class="info-row">
+            <p class="info-label">Access</p>
+            <p class="info-val">
+              大阪市営地下鉄 四つ橋線<br>
+              「四ツ橋」駅 2番出口 徒歩2分
+            </p>
+          </div>
+          <div class="info-row">
+            <p class="info-label">TEL</p>
+            <p class="info-val">
+              <a href="tel:0665395700" class="tel-link">06-6539-5700</a>
+            </p>
+          </div>
+          <div class="info-row">
+            <p class="info-label">Budget</p>
+            <p class="info-val">
+              Lunch <span class="accent-text">¥850〜</span> ／
+              Dinner <span class="accent-text">¥2,000〜</span>
+            </p>
           </div>
         </div>
-
         <!-- Map -->
-        <div class="fade-up stagger-2">
-          <div class="map-container h-full min-h-[400px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.271095786882!2d135.5107!3d34.7052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5aSn6Ziq5biC5YyX5Yy6!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
-              width="100%"
-              height="100%"
-              style="border:0; min-height: 400px;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+        <div class="map-wrap reveal d2">
+          <iframe
+            src="https://maps.google.com/maps?q=大阪府大阪市西区新町1丁目8-6+三愛ビル&t=&z=17&ie=UTF8&iwloc=B&output=embed"
+            width="100%" height="100%"
+            style="border:0;display:block;min-height:460px;"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="あらた屋 地図">
+          </iframe>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ Footer ============ -->
-  <footer class="footer py-16">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col items-center text-center">
-        <!-- Logo -->
-        <p class="footer-logo">阿らた屋</p>
-        <p class="text-xs text-gray-500 mt-2 tracking-[0.2em]">TSUKESOBA SPECIALTY</p>
-
-        <!-- Social -->
-        <div class="flex gap-4 mt-8">
-          <a href="#" class="social-link" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" class="social-link" aria-label="X (Twitter)">
-            <i class="fab fa-x-twitter"></i>
-          </a>
-          <a href="#" class="social-link" aria-label="食べログ">
-            <i class="fas fa-utensils"></i>
-          </a>
-        </div>
-
-        <!-- Copyright -->
-        <div class="mt-12 pt-8 border-t border-dark-600 w-full text-center">
-          <p class="text-xs text-gray-600 tracking-widest">
-            &copy; 2024 阿らた屋 All Rights Reserved.
-          </p>
-        </div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-logo">あらた屋</p>
+      <p class="footer-sub">TSUKESOBA SPECIALTY · OSAKA SHINMACHI</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-btn" aria-label="X (Twitter)">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://hitosara.com/0006092125/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="ヒトサラ">
+          <i class="fas fa-utensils"></i>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 つけ蕎麦 あらた屋. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
   <!-- ============ Scripts ============ -->
   <script>
-    // --- Mobile Menu Toggle ---
+    // Mobile menu
     function toggleMenu() {
-      document.getElementById('hamburger').classList.toggle('active');
-      document.getElementById('mobileMenu').classList.toggle('active');
-      document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('active') ? 'hidden' : '';
+      const h = document.getElementById('hamburger');
+      const m = document.getElementById('mobileMenu');
+      h.classList.toggle('active');
+      m.classList.toggle('active');
+      document.body.style.overflow = m.classList.contains('active') ? 'hidden' : '';
     }
 
-    // --- Navbar Scroll Effect ---
+    // Nav scroll
     window.addEventListener('scroll', () => {
-      const nav = document.querySelector('.nav-glass');
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
 
-    // --- Intersection Observer for Animations ---
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
 
-    document.querySelectorAll('.fade-up, .fade-in').forEach(el => {
-      observer.observe(el);
-    });
-
-    // --- Smooth Scroll for Anchor Links ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   </script>
-
 </body>
 </html>
