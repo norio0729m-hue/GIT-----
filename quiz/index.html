@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>記事診断 | 今の自分に合った記事へ</title>
+  <meta name="description" content="10問に答えるだけで、今の自分に合った記事がわかります。登録不要・無料。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== START SCREEN ===== -->
+  <div id="screen-start" class="screen active">
+    <div class="start-inner">
+      <div class="icon-top">📚</div>
+      <h1>今日読む記事、<br>迷ってない？</h1>
+      <p class="lead">
+        10問に答えるだけで<br>
+        <strong>今の自分に合った記事</strong>がわかります
+      </p>
+      <button class="btn-primary" onclick="startQuiz()">診断スタート →</button>
+      <p class="meta-note">約2分 ／ 登録不要 ／ 完全無料</p>
+    </div>
+  </div>
+
+  <!-- ===== QUIZ SCREEN ===== -->
+  <div id="screen-quiz" class="screen">
+    <div class="progress-wrap">
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <span class="progress-text"><span id="q-num">1</span> / 10</span>
+    </div>
+
+    <div class="quiz-body">
+      <p id="question-text" class="question-text"></p>
+      <div id="choices" class="choices"></div>
+    </div>
+
+    <div class="quiz-nav">
+      <button id="btn-back" class="btn-back" onclick="goBack()">← 戻る</button>
+      <button id="btn-next" class="btn-next" onclick="goNext()" disabled>次へ →</button>
+    </div>
+  </div>
+
+  <!-- ===== RESULT SCREEN ===== -->
+  <div id="screen-result" class="screen">
+    <div class="result-header">
+      <span class="level-badge" id="result-badge"></span>
+      <h2>あなたへのおすすめ記事</h2>
+      <p class="result-profile-text" id="result-profile"></p>
+    </div>
+
+    <div id="result-cards" class="result-cards"></div>
+
+    <div class="result-footer">
+      <button class="btn-restart" onclick="restartQuiz()">↺ もう一度診断する</button>
+      <p class="result-note">記事を読んだら、また診断してみてください</p>
+    </div>
+  </div>
+
+  <!-- data.js を先に読み込む（記事データ） -->
+  <script src="data.js"></script>
+  <!-- logic.js（診断ロジック） -->
+  <script src="logic.js"></script>
+</body>
+</html>
